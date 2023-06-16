@@ -7,7 +7,9 @@ class MainClass {
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero()
     this.hamburgerItems = document.getElementsByClassName('app__container-header-mobile__items');
-    this.init();
+    this.showLoadingScreen();
+
+
   }
 
   init() {
@@ -45,41 +47,62 @@ class MainClass {
     const isAlpha = function (ch) {
       return /^[A-Z,",.']$/i.test(ch);
     };
-    
+
     // GPT GENERATED WITH A LITTLE CLEANING HERE AND THERE
-    
-      // Get the element containing the text to type
-      const typingDemo = document.querySelector('.typing-demo');
 
-      // Get the text to type
-      const text = typingDemo.innerHTML;
+    // Get the element containing the text to type
+    const typingDemo = document.querySelector('.typing-demo');
 
-      // Clear the text content
-      typingDemo.innerHTML = '';
+    // Get the text to type
+    const text = typingDemo.innerHTML;
 
-      // Create a function to simulate typing effect
-      function typeEffect(index) {
-        if (index <= text.length) {
-          if (isAlpha(text.substring(index - 1, index))) {
-            // Update the text content with the next character
-            typingDemo.innerHTML = text.substring(0, index);
+    // Clear the text content
+    typingDemo.innerHTML = '';
 
-            // Schedule the next character to be typed after a delay
-            setTimeout(function () {
-              typeEffect(index + 1);
-            }, 100); // Adjust the typing speed by changing the delay value (in milliseconds)
-          } else {
-            setTimeout(function () {
-              typeEffect(index + 1);
-            }, 0); // Adjust the typing speed by changing the delay value (in milliseconds)
-          }
+    // Create a function to simulate typing effect
+    function typeEffect(index) {
+      if (index <= text.length) {
+        if (isAlpha(text.substring(index - 1, index))) {
+          // Update the text content with the next character
+          typingDemo.innerHTML = text.substring(0, index);
+
+          // Schedule the next character to be typed after a delay
+          setTimeout(function () {
+            typeEffect(index + 1);
+          }, 100); // Adjust the typing speed by changing the delay value (in milliseconds)
+        } else {
+          setTimeout(function () {
+            typeEffect(index + 1);
+          }, 0); // Adjust the typing speed by changing the delay value (in milliseconds)
         }
       }
-      
-      // Start the typing effect
-      typeEffect(0);
     }
+
+    // Start the typing effect
+    typeEffect(0);
   }
+
+  hideLoadingScreen() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.style.display = 'none';
+    document.querySelector('.app__container').style.display = 'block'
+    this.init()
+  }
+  timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async showLoadingScreen() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.style.display = 'flex';
+    document.querySelector('.app__container').style.display = 'none';
+    await this.timeout(5000);
+    this.hideLoadingScreen();
+  }
+  
+}
+
+
 
 
 const init = new MainClass();

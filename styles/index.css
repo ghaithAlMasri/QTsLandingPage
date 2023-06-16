@@ -17,6 +17,16 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
+
+.loadingscreen {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 150px;
+	width: 150px;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -25,14 +35,40 @@ body {
     background: rgb(3, 0, 51);
     background: linear-gradient(90deg, rgba(3, 0, 51, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
     background-repeat: repeat-y;
+    width: 100%;
+    height: 100vh;
 }
+
+.loading-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.ml2 {
+    font-weight: 900;
+    margin: 0;
+    color: #fff;
+    margin-top: 20rem;
+    padding: 0;
+  }
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
 
 .app__container {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    /* overflow: hidden; */
+    overflow: hidden;
     width: 100%;
     height: 100%;
 }
@@ -242,18 +278,17 @@ span {
 /* hero styles */
 
 .app__container-hero {
-    padding: 3;
-    padding-top: 5rem;
-    padding-bottom: 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
     text-align: center;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    z-index: -1;
+    z-index: -100 !important;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -265,14 +300,16 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: -1;
     flex-wrap: wrap;
     padding: 1rem;
+    overflow: hidden;
+    height: 100%;
 
 
 }
 
 .app__container-hero__texts>* {
-    max-width: 90%;
     padding: 1rem 0;
     text-align: center
 }
@@ -283,99 +320,21 @@ span {
 
 .app__container-hero__texts h1 {
     color: #fff;
-    font-size: 5rem;
+    font-size: 6rem;
     margin-bottom: 5rem;
 }
 
 
 .app__container-hero__texts h2 {
     color: #fff;
-
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin-bottom: 3rem;
 }
 
-@media screen and (min-width: 2000px) {
-
-    .app__container-hero__texts h1 span {
-        font-size: 7rem;
-    }
-
-    .app__container-hero__texts h2 {
-        font-size: 3.5rem;
-    }
-
-
-    .app__container-hero__texts h3 {
-        font-size: 2rem;
-    }
-
-
-}
-
-@media screen and (min-width: 1800px) {
-
-    .app__container-hero__texts h1 span {
-        font-size: 4.5rem;
-    }
-
-    .app__container-hero__texts h2 {
-        font-size: 3rem;
-    }
-
-
-    .app__container-hero__texts h3 {
-        font-size: 1.7rem;
-    }
-
-
-}
-@media screen and (min-width: 1451px) {
-
-    .app__container-hero__texts h1 span {
-        font-size: 3.6rem;
-    }
-
-    .app__container-hero__texts h2 {
-        font-size: 2.7rem;
-    }
-
-
-    .app__container-hero__texts h3 {
-        font-size: 1.7rem;
-    }
-
-
-}
-
-@media screen and (max-width: 1450px) {
-    .app__container-hero__texts h1 {
-        font-size: 3rem;
-    }
-    .app__container-hero__texts h2 {
-        font-size: 2rem;
-    }
-
-    .app__container-hero__texts{
-        margin-right: 10rem;
-    }
-
-
-
-
-
-}
-
-
-
-.wrapper {
-
-    width: 60%;
-    padding: 1rem;
-
-}
 
 .thought {
+    width: 93%;
+    padding: 1rem;
     position: relative;
     background: #fff;
     color: #000;
@@ -405,6 +364,8 @@ span {
     overflow: hidden;
     animation: typing 0.1s, blink-caret 0.1s step-end infinite;
     display: inline-block;
+    font-size: 1.7rem;
+
 }
 
 @keyframes typing {
@@ -442,7 +403,15 @@ span {
 
 
 .app__container-hero__tshirt {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -2;
+    overflow: hidden;
+
 }
 
 
@@ -457,9 +426,25 @@ span {
 }
 
 
-canvas{
-    width: 100%;
-    height: 100vh;
+@media screen and (max-width: 1250px) {
+
+
+    .app__container-hero__texts h1 {
+
+        font-size: 5rem;
+
+    }
+
+
+    .app__container-hero__texts h2 {
+        font-size: 2.5rem;
+    }
+
+    .typing-demo {
+        font-size: 1.5rem;
+
+    }
+
 }
 
 /* end of hero styles */

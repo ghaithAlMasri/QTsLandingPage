@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>QTs Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -11,6 +12,49 @@
 </head>
 
 <body>
+    <div class="loading-screen">
+        <svg viewBox="0 0 100 100" class="loadingscreen">
+            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+                <!-- left line -->
+                <path d="M 21 40 V 59">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                        values="0 21 59; 180 21 59" dur="2s" repeatCount="indefinite" />
+                </path>
+                <!-- right line -->
+                <path d="M 79 40 V 59">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                        values="0 79 59; -180 79 59" dur="2s" repeatCount="indefinite" />
+                </path>
+                <!-- top line -->
+                <path d="M 50 21 V 40">
+                    <animate attributeName="d" values="M 50 21 V 40; M 50 59 V 40" dur="2s"
+                        repeatCount="indefinite" />
+                </path>
+                <!-- btm line -->
+                <path d="M 50 60 V 79">
+                    <animate attributeName="d" values="M 50 60 V 79; M 50 98 V 79" dur="2s"
+                        repeatCount="indefinite" />
+                </path>
+                <!-- top box -->
+                <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
+                    <animate attributeName="stroke" values="rgba(255,255,255,1); rgba(100,100,100,0)" dur="2s"
+                        repeatCount="indefinite" />
+                </path>
+              
+                <!-- mid box -->
+                <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
+                <!-- btm box -->
+                <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
+                    <animate attributeName="stroke" values="rgba(100,100,100,0); rgba(255,255,255,1)" dur="2s"
+                        repeatCount="indefinite" />
+                </path>
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; 0 -19"
+                    dur="2s" repeatCount="indefinite" />
+                </g>
+        </svg>
+        <h1 class="ml2 letter">Loading...</span></h1>
+    </div>
+
     <div class="app__container">
 
 
@@ -32,7 +76,7 @@
                 </li>
                 <li class="app__container-header-mobile__items"><a href="#home">Home</a></li>
                 <li class="app__container-header-mobile__items"><a href="#home">Kontakt</a></li>
-                <li class="app__container-header-mobile__items"><a href="https://neuralthreads.netlify.app/">Create a
+                <li class="app__container-header-mobile__items"><a href="https://appneuralthreads.netlify.app/">Create a
                         Shirt</a></li>
             </ul>
             <button id="menu-toggle">
@@ -42,16 +86,20 @@
         </header>
         <!-- END OF HEADER -->
 
+
+
         <!-- BEGINNING OF HERO -->
         <div class="app__container-hero" id="home">
             <div class="app__container-hero__tshirt" id="tshirt"></div>
             <div class="app__container-hero__texts">
                 <h1 class="neuralthreads"><span>NEURALTHREADS</span></h1>
-                <h2 class="no-padding">Deine Worte. Dein Entwurf.</h2>
+                <h2 class="no-padding">Deine Worte & Dein Entwurf</h2>
                 <div class="wrapper thought">
-                    <h3 class="typing-demo">"ein <span>Astronaut</span>, der sich in einem tropischen Resort im Weltraum entspannt,
-                        Vaporwave. Sehr
-                        <span>realistisch</span> aussehend."</h3>
+                    <h3 class="typing-demo">"ein <span>Astronaut</span>, der sich in einem tropischen <br>Resort im
+                        Weltraum entspannt,
+                        Vaporwave. <br>Sehr
+                        <span>realistisch</span> aussehend."
+                    </h3>
                 </div>
             </div>
         </div>
