@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>QTs Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app__container">
+
+
+        <!-- BEGINNING OF HEADER -->
+        <header class="app__container-header" id="menu">
+            <a href="#home"><img src="/logo.png" alt="Neuralthreads logo"></a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#home">Kontakt</a></li>
+                <li><a href="https://neuralthreads.netlify.app/">Create a Shirt</a></li>
+            </ul>
+        </header>
+
+
+        <header class="app__container-header-mobile hidden" id="mobile">
+            <ul class="app__container-header-mobile__menu" id="app__container-header-mobile__menu">
+                <li>
+                    <img src="/logoBlack.png" alt="Neuralthreads logo">
+                </li>
+                <li class="app__container-header-mobile__items"><a href="#home">Home</a></li>
+                <li class="app__container-header-mobile__items"><a href="#home">Kontakt</a></li>
+                <li class="app__container-header-mobile__items"><a href="https://neuralthreads.netlify.app/">Create a
+                        Shirt</a></li>
+            </ul>
+            <button id="menu-toggle">
+                <i class="fa-solid fa-bars" id="menu-button"></i>
+                <i class="fa-solid fa-x hidden" id="x-button"></i>
+            </button>
+        </header>
+        <!-- END OF HEADER -->
+
+        <!-- BEGINNING OF HERO -->
+        <div class="app__container-hero" id="home">
+            <div class="app__container-hero__tshirt" id="tshirt"></div>
+            <div class="app__container-hero__texts">
+                <h1 class="neuralthreads"><span>NEURALTHREADS</span></h1>
+                <h2 class="no-padding">Deine Worte. Dein Entwurf.</h2>
+                <div class="wrapper thought">
+                    <h3 class="typing-demo">"ein <span>Astronaut</span>, der sich in einem tropischen Resort im Weltraum entspannt,
+                        Vaporwave. Sehr
+                        <span>realistisch</span> aussehend."</h3>
+                </div>
+            </div>
+        </div>
+        <!-- END OF HERO -->
+
+
+
+
+
+    </div>
+</body>
+<script defer src="/fontawesome/js/brands.js"></script>
+<script defer src="/fontawesome/js/solid.js"></script>
+<script defer src="/fontawesome/js/fontawesome.js"></script>
+<script type="module" src="/scripts/index.js"></script>
+<link rel="stylesheet" href="/styles/index.css">
+
+</html>
