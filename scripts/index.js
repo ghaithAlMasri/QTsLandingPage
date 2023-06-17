@@ -3,7 +3,7 @@ import ThreeInit from './threeInit';
 import AnimateHero from './animateHero'
 class MainClass {
   constructor() {
-    this.delay = 0
+    this.delay = 5000
     this.threeInit = new ThreeInit(this.sizes);
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero(this.delay)
