@@ -163,7 +163,7 @@ span {
 }
 
 .app__container-header-mobile img {
-    width: 15rem;
+    width: 10rem;
     height: 3rem;
     object-fit: contain;
 }
@@ -181,8 +181,8 @@ span {
 }
 
 .app__container-header-mobile svg {
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     text-decoration: none;
     color: #ff577f;
     margin: 2rem 2rem;
@@ -223,7 +223,7 @@ span {
 }
 
 .app__container-header-mobile__menu a {
-    font-size: 1.9rem;
+    font-size: 1rem;
     font-weight: 400;
     color: black;
 }
@@ -241,7 +241,7 @@ span {
     }
 
     to {
-        transform: translateX(50%);
+        transform: translateX(20%);
         background-color: #e3e3e3;
         backdrop-filter: blur(4px);
         opacity: 1;
@@ -250,7 +250,7 @@ span {
 
 @keyframes slide-out {
     from {
-        transform: translateX(50%);
+        transform: translateX(20%);
         background-color: #e3e3e3;
         backdrop-filter: blur(4px);
         opacity: 1;
