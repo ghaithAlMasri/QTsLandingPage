@@ -1,7 +1,8 @@
 import anime from 'animejs/lib/anime.es.js';
 
 class AnimateHero {
-  constructor() {
+  constructor(delay = 5000) {
+    this.delay = delay
     this.textWrapper = document.querySelector('.ml2');
     this.textWrapper.innerHTML = this.textWrapper.textContent.replace(/\S/g, "<span style='color: #fff;' class='letter'>$&</span>");
     this.animate()
@@ -14,7 +15,7 @@ class AnimateHero {
       translateZ: [100, 0],
       opacity: [0, 1],
       duration: 1000,
-      delay: 5000,
+      delay: this.delay,
       easing: 'linear'
     });
 
@@ -23,7 +24,8 @@ class AnimateHero {
       translateX: [-100, 0],
       easing: 'spring(0,10,0.41,4)',
       duration: 100,
-      delay: 5000,
+      delay: this.delay,
+
 
     });
     anime({
@@ -31,7 +33,7 @@ class AnimateHero {
       translateY: [100, 0],
       easing: 'linear',
       duration: 1000,
-      delay: 5000,
+      delay: this.delay,
     });
 
     anime.timeline({ loop: true })

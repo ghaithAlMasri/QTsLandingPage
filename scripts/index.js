@@ -3,13 +3,12 @@ import ThreeInit from './threeInit';
 import AnimateHero from './animateHero'
 class MainClass {
   constructor() {
+    this.delay = 100
     this.threeInit = new ThreeInit();
     this.hamburger = new Hamburger();
-    this.animateHero = new AnimateHero()
+    this.animateHero = new AnimateHero(this.delay)
     this.hamburgerItems = document.getElementsByClassName('app__container-header-mobile__items');
     this.showLoadingScreen();
-
-
   }
 
   init() {
@@ -96,7 +95,7 @@ class MainClass {
     const loadingScreen = document.querySelector('.loading-screen');
     loadingScreen.style.display = 'flex';
     document.querySelector('.app__container').style.display = 'none';
-    await this.timeout(5000);
+    await this.timeout(this.delay);
     this.hideLoadingScreen();
   }
   
