@@ -3,8 +3,8 @@ import ThreeInit from './threeInit';
 import AnimateHero from './animateHero'
 class MainClass {
   constructor() {
-    this.delay = 5000
-    this.threeInit = new ThreeInit();
+    this.delay = 0
+    this.threeInit = new ThreeInit(this.sizes);
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero(this.delay)
     this.hamburgerItems = document.getElementsByClassName('app__container-header-mobile__items');
@@ -15,10 +15,10 @@ class MainClass {
     // HEADER
     this.hamburger.checkMenu();
     this.handleMenuClick();
-
     window.onresize = () => {
 
       try {
+        // this.threeInit.updateSizes();
         this.hamburger.checkMenu();
       } catch (error) {
         console.log(error);

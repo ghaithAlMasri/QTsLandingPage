@@ -3,6 +3,7 @@ class Hamburger {
       this.mobileMenu = document.getElementById('mobile');
       this.mainMenu = document.getElementById('menu');
       this.menuButton = document.getElementById('menu-button');
+      this.buttons = document.querySelector('.app__container-hero__buttons-container')
       this.xButton = document.getElementById('x-button');
       this.sizes = {
         width: window.innerWidth,
@@ -28,11 +29,13 @@ class Hamburger {
         this.menuItems.classList.add("hideMenu");
         this.xButton.style.display = "none";
         this.menuButton.style.display = "block";
+        this.buttons.style.zIndex = 0
       } else {
         this.menuItems.classList.remove("hideMenu");
         this.menuItems.classList.add("showMenu");
         this.xButton.style.display = "block";
         this.menuButton.style.display = "none";
+        this.buttons.style.zIndex = -1
       }
     }
   }

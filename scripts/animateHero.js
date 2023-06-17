@@ -52,6 +52,25 @@ class AnimateHero {
         easing: "easeOutExpo",
         delay: 250
       });
+
+      anime({
+        targets: '.app__container-hero__button-up',
+        translateX: [-1000, 0],
+        translateY: [-1000, 0],
+        translateZ: [-1000, 0],
+        duration:1400,
+        delay:this.delay + 300,
+        rotate: '2turn'
+      });
+      anime({
+        targets: '.app__container-hero__button-down',
+        translateX: [1000, 0],
+        translateY: [1000, 0],
+        translateZ: [1000, 0],
+        duration:1400,
+        delay:this.delay + 300,
+        rotate: '2turn'
+      });
   }
 
 }

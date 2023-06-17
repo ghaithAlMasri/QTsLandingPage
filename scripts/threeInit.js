@@ -141,7 +141,7 @@ class ThreeInit {
   generateRandomStars() {
     const numStars = 5000;
     let lastStar = null
-    const starGeometry = new THREE.SphereGeometry(0.001);
+    const starGeometry = new THREE.SphereGeometry(0.0012);
     const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
     for (let i = 0; i < numStars; i++) {
@@ -163,6 +163,7 @@ class ThreeInit {
     requestAnimationFrame(this.animate);
     const startRotation = 0.02;
     const rotationSpeed = 0.001;
+    const moveSpeed = 0.0003
 
     this.scene.traverse((child) => {
       if (child instanceof THREE.Group && child.name === 'model') {
@@ -173,7 +174,9 @@ class ThreeInit {
         }
         child.rotation.x += rotationSpeed * this.rotationDirection;
         child.rotation.y += rotationSpeed * this.rotationDirection;
-        child.rotation.z += (rotationSpeed * this.rotationDirection) / 50;
+        child.rotation.z += (rotationSpeed * this.rotationDirection) ;
+        child.position.x += (moveSpeed * this.rotationDirection)/1.3
+        child.position.y += (moveSpeed * this.rotationDirection)
       }
     });
 
@@ -189,5 +192,4 @@ class ThreeInit {
 }
 
 export default ThreeInit;
-
 

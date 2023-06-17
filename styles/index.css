@@ -19,12 +19,12 @@ a {
 
 
 .loadingscreen {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	height: 150px;
-	width: 150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
     height: 100vh;
 }
 
-.loading-screen{
+.loading-screen {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,12 +56,12 @@ body {
     color: #fff;
     margin-top: 20rem;
     padding: 0;
-  }
-  
-  .ml2 .letter {
+}
+
+.ml2 .letter {
     display: inline-block;
     line-height: 1em;
-  }
+}
 
 .app__container {
     display: flex;
@@ -71,6 +71,7 @@ body {
     overflow: hidden;
     width: 100%;
     height: 100%;
+    margin-trim: block-end;
 }
 
 span {
@@ -131,7 +132,7 @@ span {
     height: 4px;
     border-radius: 50%;
     background-color: #ff577f;
-    z-index: 1;
+    z-index: 99;
     transition: all 0.9s ease-in-out;
 }
 
@@ -200,7 +201,7 @@ span {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 99;
+    z-index: 100;
     background: transparent;
     color: black;
     list-style: none;
@@ -266,6 +267,7 @@ span {
 
 .showMenu {
     animation: slide-in 1s forwards;
+    z-index: 100;
 }
 
 
@@ -280,7 +282,7 @@ span {
         width: 7rem;
     }
 
-    .app__container-header-mobile__menu a{
+    .app__container-header-mobile__menu a {
         font-size: 0.8rem;
     }
 }
@@ -294,7 +296,6 @@ span {
     align-items: flex-start;
     text-align: center;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    z-index: -100 !important;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -311,7 +312,6 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: -1;
     flex-wrap: wrap;
     padding: 1rem;
     overflow: hidden;
@@ -320,7 +320,8 @@ span {
 
 .app__container-hero__texts>* {
     padding: 1rem 0;
-    text-align: center
+    text-align: center;
+    z-index: -1;
 }
 
 .app__container-hero__texts .no-padding {
@@ -424,7 +425,7 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2;
+    z-index: -100;
     overflow: hidden;
 
 }
@@ -461,12 +462,13 @@ span {
     }
 
 }
+
 @media screen and (max-width: 620px) {
 
 
     .app__container-hero__texts h1 {
 
-        font-size: 3rem;
+        font-size: 2.7rem;
 
     }
 
@@ -480,6 +482,12 @@ span {
 
     }
 
+}
+
+@media screen and (max-width: 450px) {
+    .app__container-hero__texts{
+        width: 100%;
+    }
 }
 
 
@@ -501,9 +509,9 @@ span {
         font-size: 0.7rem;
 
     }
+
     .app__container-hero__texts h1 {
         margin-bottom: 12rem
-
     }
 
     .app__container-hero__texts .no-padding {
@@ -511,7 +519,7 @@ span {
         margin: 0;
     }
 
-    .thought{
+    .thought {
         padding: 1rem;
         margin: 1rem;
         margin-bottom: 5rem;
@@ -519,6 +527,63 @@ span {
 
 }
 
+
+.app__container-hero__buttons-container {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.app__container-hero__buttons-container .app__container-hero__button-up,
+.app__container-hero__buttons-container .app__container-hero__button-down {
+    color: #fff;
+    margin: 1rem;
+    padding: 0.8rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: all 1s ease-in-out;
+}
+
+
+
+.app__container-hero__buttons-container .app__container-hero__button-up {
+    color: #fff;
+    background-color: #ff577f;
+}
+
+
+.app__container-hero__buttons-container .app__container-hero__button-down {
+    color: #ff577f;
+    background-color: #fff;
+}
+
+
+.app__container-hero__buttons-container .app__container-hero__button-down:hover,
+.app__container-hero__buttons-container .app__container-hero__button-up:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    color: #ff577f;
+    border: 1px solid #ff577f;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+
+@media screen and (max-width:600px) {
+    
+    .app__container-hero__buttons-container .app__container-hero__button-up,
+    .app__container-hero__buttons-container .app__container-hero__button-down {
+        font-size: 0.55rem;
+    }
+}
+
+
+
+.app__container {
+    margin-trim: block-end;
+}
 
 
 
