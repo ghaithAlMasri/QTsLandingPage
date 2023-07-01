@@ -144,7 +144,7 @@ class ThreeInit {
   generateRandomStars() {
     const numStars = 5000;
     let lastStar = null
-    const starGeometry = new THREE.SphereGeometry(0.0012);
+    const starGeometry = new THREE.SphereGeometry(0.0006);
     const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
     for (let i = 0; i < numStars; i++) {

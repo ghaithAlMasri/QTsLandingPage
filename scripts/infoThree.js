@@ -1,7 +1,5 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { TextureLoader } from 'three';
-
 
 class InfoThree {
   constructor() {
@@ -10,6 +8,7 @@ class InfoThree {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.loader = new GLTFLoader();
+    this.moon = null; // Store reference to the moon model
     this.init();
   }
 
@@ -20,6 +19,7 @@ class InfoThree {
 
     this.backgroundSetup();
     this.setupLights();
+    this.generateRandomStars()
     this.addObject();
     this.setupCamera();
     this.renderScene();
@@ -28,89 +28,44 @@ class InfoThree {
   backgroundSetup() {
     this.renderer.setClearColor(0x000000, 1);
   }
-  
 
   addObject() {
     const self = this;
-    this.loader.load("./saturn.glb", function (model) {
-      model.scene.position.set(0, 0, 2);
-      model.scene.scale.set(0.3, 0.3, 0.3);
-      console.log(model.scene)
+    this.loader.load('./the_moon.glb', function (model) {
+      self.moon = model.scene;
+      self.sizing = 0.07
+      self.moon.position.set(1, -0.2, 0);
+      self.moon.scale.set(self.sizing, self.sizing, self.sizing);
 
-
-      const bodyMaterial = new THREE.MeshStandardMaterial({
-        roughness: 0.4,
-        metalness: 0.6,
-        side: THREE.DoubleSide,
-      });
-
-      const ringMaterial = new THREE.MeshStandardMaterial({
-        roughness: 0.4,
-        metalness: 0.7,
-        side: THREE.DoubleSide,
-      });
-  
-
-      const textureLoader = new THREE.TextureLoader();
-      const bodyTexture = textureLoader.load("/Saturn_body.jpg");
-      const ringTexture = textureLoader.load("/Saturn_ring.png");
-  
-
-      bodyMaterial.map = bodyTexture;
-      ringMaterial.map = ringTexture;
-      bodyMaterial.aoMap = bodyTexture;
-      ringMaterial.aoMap = ringTexture;
-  
-
-      model.scene.traverse(function (child) {
-        if (child.isMesh) {
-          if (child.name === "Cube") {
-            child.material = bodyMaterial;
-          } else if (child.name === "Circle") {
-            child.material = ringMaterial;
-          }
-        }
-      });
-
-  
-      self.scene.add(model.scene);
-      self.animateSaturn();
+      self.scene.add(self.moon);
+      self.animateMoon();
       self.renderScene();
     });
   }
-  
 
   setupCamera() {
-    this.camera.position.set(0, 0, 5);
+    this.camera.position.set(0, 0, 1);
   }
-  
-
 
   setupLights() {
-
-    const ambientLight = new THREE.AmbientLight(0x808080, 0.6); 
+    const ambientLight = new THREE.AmbientLight(0x808080, 0.6);
     this.scene.add(ambientLight);
-  
 
-    const directionalLight = new THREE.DirectionalLight(0xffe6c0, 0.2);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(-1, 0, 1);
     this.scene.add(directionalLight);
 
-    const directionalLight2 = new THREE.DirectionalLight(0xffe6c0, 0.2);
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight2.position.set(1, 0, -1);
-
     this.scene.add(directionalLight2);
   }
-  
-  
 
-  animateSaturn() {
-    requestAnimationFrame(this.animateSaturn.bind(this));
-  
+  animateMoon() {
+    requestAnimationFrame(this.animateMoon.bind(this));
 
-    this.scene.rotation.z += 0.004;
-    this.scene.rotation.y += 0.004;
-    this.scene.rotation.x += 0.002;
+    if (this.moon) {
+      this.moon.rotation.y += 0.001;
+    }
 
     this.renderScene();
   }
@@ -120,6 +75,31 @@ class InfoThree {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.render(this.scene, this.camera);
   }
+
+  generateRandomStars() {
+    const numStars = 5000;
+    let lastStar = null
+    const starGeometry = new THREE.SphereGeometry(0.0006);
+    const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  
+    for (let i = 0; i < numStars; i++) {
+      const star = new THREE.Mesh(starGeometry, starMaterial);
+      star.name = 'star';
+      if (i === 69) { lastStar = star }
+  
+  
+      const x = THREE.MathUtils.randFloatSpread(2);
+      const y = THREE.MathUtils.randFloatSpread(2);
+      const z = THREE.MathUtils.randFloatSpread(2);
+  
+      star.position.set(x, y, z);
+      this.scene.add(star);
+    }
+  }
 }
 
 export default InfoThree;
+
+
+
+
