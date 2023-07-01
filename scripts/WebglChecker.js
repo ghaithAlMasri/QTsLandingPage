@@ -1,6 +1,6 @@
 import WebGL from 'three/addons/capabilities/WebGL.js';
 
-class WebGlRenderer {
+class WebGlRendererChecker {
     check() {
         if (WebGL.isWebGLAvailable()) {
             return true;
@@ -11,4 +11,4 @@ class WebGlRenderer {
     }
 }
 
-export default WebGlRenderer;
+export default WebGlRendererChecker;

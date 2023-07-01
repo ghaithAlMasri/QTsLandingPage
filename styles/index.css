@@ -33,11 +33,10 @@ body {
     font-family: 'PT Sans', sans-serif;
     background-color: #000;
     background: rgb(3, 0, 51);
-    background: linear-gradient(90deg, rgba(3, 0, 51, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
+    background: #000000;
     background-repeat: repeat-y;
     width: 100%;
     height: 100vh;
-    margin-trim: block-end !important;
 }
 
 .loading-screen {
@@ -71,7 +70,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-trim: block-end;
 }
 
@@ -418,17 +417,15 @@ span {
     border-right: 0.15em solid #ff577f;
 }
 
-
 .app__container-hero__tshirt {
 
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: -100;
     overflow: hidden;
-
 }
 
 
@@ -589,3 +586,19 @@ span {
 
 
 /* end of hero styles */
+
+/* beginning of info styles */
+
+.app__container-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.app__container-info__canvas{
+    width: 100%;
+    height: 100%;
+}

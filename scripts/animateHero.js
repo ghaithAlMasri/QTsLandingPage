@@ -2,11 +2,13 @@ import anime from 'animejs/lib/anime.es.js';
 
 class AnimateHero {
   constructor(delay = 5000) {
-    this.delay = delay
+    this.delay = delay;
     this.textWrapper = document.querySelector('.ml2');
     this.textWrapper.innerHTML = this.textWrapper.textContent.replace(/\S/g, "<span style='color: #fff;' class='letter'>$&</span>");
+
     this.animate()
   }
+
 
   animate() {
     anime({
@@ -25,9 +27,8 @@ class AnimateHero {
       easing: 'spring(0,10,0.41,4)',
       duration: 100,
       delay: this.delay,
-
-
     });
+
     anime({
       targets: '.thought',
       translateY: [100, 0],
@@ -53,27 +54,26 @@ class AnimateHero {
         delay: 250
       });
 
-      anime({
-        targets: '.app__container-hero__button-up',
-        translateX: [-1000, 0],
-        translateY: [-1000, 0],
-        translateZ: [-1000, 0],
-        duration:1400,
-        delay:this.delay + 300,
-        rotate: '2turn'
-      });
-      anime({
-        targets: '.app__container-hero__button-down',
-        translateX: [1000, 0],
-        translateY: [1000, 0],
-        translateZ: [1000, 0],
-        duration:1400,
-        delay:this.delay + 300,
-        rotate: '2turn'
-      });
-  }
+    anime({
+      targets: '.app__container-hero__button-up',
+      translateX: [-1000, 0],
+      translateY: [-1000, 0],
+      translateZ: [-1000, 0],
+      duration: 1000,
+      delay: this.delay + 300,
+      rotate: '2turn'
+    });
 
+    anime({
+      targets: '.app__container-hero__button-down',
+      translateX: [1000, 0],
+      translateY: [1000, 0],
+      translateZ: [1000, 0],
+      duration: 1000,
+      delay: this.delay + 300,
+      rotate: '2turn'
+    });
+  }
 }
 
-
-export default AnimateHero
+export default AnimateHero;

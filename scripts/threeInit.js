@@ -1,4 +1,4 @@
-import WebGlRenderer from './WebglChecker';
+import WebGlRendererChecker from './WebglChecker';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
@@ -34,12 +34,15 @@ class ThreeInit {
 
     this.camera.position.set(0, 0, 1.3);
     this.loader = new GLTFLoader();
-    this.webGlRenderer = new WebGlRenderer();
+    this.webGlRendererChecker = new WebGlRendererChecker();
     this.division = document.querySelector('.app__container-hero__tshirt');
     this.logoScaler = (this.scaler >= 0.8) ? 0.021 : 0.015
     this.logoZ = (this.logoScaler === 0.021) ? 0.135 : 0.08
     this.logoY = (this.logoScaler === 0.021) ? 0.08 : 0.04
-    this.init();
+
+    if (this.webGlRendererChecker.check()) {
+      this.init();
+    }
   }
 
 
@@ -111,9 +114,9 @@ class ThreeInit {
     this.renderer.shadowMap.enabled = true;
     this.division.appendChild(this.renderer.domElement);
 
-    if (this.webGlRenderer.check()) {
+
       this.setupLights();
-    }
+
   }
 
   setupLights() {

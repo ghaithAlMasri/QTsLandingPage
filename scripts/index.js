@@ -1,12 +1,15 @@
 import Hamburger from './hamburgerMenu';
 import ThreeInit from './threeInit';
 import AnimateHero from './animateHero'
+import InfoThree from './infoThree'
+
 class MainClass {
   constructor() {
-    this.delay = 5000
+    this.delay = 0
     this.threeInit = new ThreeInit(this.sizes);
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero(this.delay)
+    this.InfoThree = new InfoThree()
     this.hamburgerItems = document.getElementsByClassName('app__container-header-mobile__items');
     this.showLoadingScreen();
   }
@@ -18,7 +21,6 @@ class MainClass {
     window.onresize = () => {
 
       try {
-        // this.threeInit.updateSizes();
         this.hamburger.checkMenu();
       } catch (error) {
         console.log(error);
@@ -34,6 +36,7 @@ class MainClass {
     // HERO
     document.addEventListener('DOMContentLoaded', this.createTypeWriterEffect());
     // end of hero
+    // infos
   }
 
   handleMenuClick() {
