@@ -8,7 +8,12 @@ class InfoThree {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.loader = new GLTFLoader();
-    this.moon = null; // Store reference to the moon model
+    this.moon = null;
+    this.sizes = {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
+    this.sizing = this.sizes.width>=800 ? 0.07 : 0.085
     this.init();
   }
 
@@ -33,7 +38,6 @@ class InfoThree {
     const self = this;
     this.loader.load('./the_moon.glb', function (model) {
       self.moon = model.scene;
-      self.sizing = 0.07
       self.moon.position.set(1, -0.2, 0);
       self.moon.scale.set(self.sizing, self.sizing, self.sizing);
 
