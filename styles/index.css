@@ -687,10 +687,11 @@ span {
     }
 
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 550px) {
 
     .app__container-info{
         align-items: flex-start;
+        justify-content: center;
     }
 
     .app__container-info__texts{
@@ -751,16 +752,15 @@ span {
     }
 }
 
+
 @media screen and (max-width:550px) {
     .app__container-info__image img {
-        top: 10rem;
-        left: 10rem;
-    }
-}
-@media screen and (max-width:350px) {
-    .app__container-info__image img {
-        top: 15rem;
+        top: 17rem;
         width: 70%;
-        left: auto;
+        left: 2rem;
+    }
+
+    .app__container-info{
+        padding: 0;
     }
 }
