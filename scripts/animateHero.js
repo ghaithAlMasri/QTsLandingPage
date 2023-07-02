@@ -87,7 +87,7 @@ class AnimateHero {
       delay: this.delay,
     });
     anime({
-      targets: '.app__container-info__texts',
+      targets: '.app__container-info__image',
       scale: [0, 1],
       opacity: [0, 0.25, 0.5, 1],
       easing: 'easeInOutExpo',

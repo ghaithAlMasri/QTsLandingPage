@@ -24,7 +24,7 @@ class InfoThree {
 
     this.backgroundSetup();
     this.setupLights();
-    this.generateRandomStars()
+    // this.generateRandomStars()
     this.addObject();
     this.setupCamera();
     this.renderScene();

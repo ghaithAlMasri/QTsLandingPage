@@ -5,7 +5,7 @@ import InfoThree from './infoThree'
 
 class MainClass {
   constructor() {
-    this.delay = 15000
+    this.delay = 0
     this.threeInit = new ThreeInit(this.sizes);
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero(this.delay)
