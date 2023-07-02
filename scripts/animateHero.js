@@ -10,7 +10,7 @@ class AnimateHero {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           this.animate();
-          this.delay = 400
+          this.delay = 1000
 
         }
       });
@@ -22,7 +22,7 @@ class AnimateHero {
 
 
     this.animate()
-    this.delay = 400
+    this.delay = 1000
 
   }
 

@@ -673,10 +673,10 @@ span {
 @media screen and (max-width: 700px) {
 
     .app__container-info__texts p{
-        font-size: 1rem;
+        font-size: 0.5rem;
     }
     .app__container-info__texts h3{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
 }
