@@ -10,7 +10,7 @@ class AnimateHero {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           this.animate();
-          this.delay = 0
+          this.delay = 400
 
         }
       });
@@ -22,6 +22,8 @@ class AnimateHero {
 
 
     this.animate()
+    this.delay = 400
+
   }
 
 
@@ -31,25 +33,27 @@ class AnimateHero {
       translateX: [100, 0],
       translateZ: [100, 0],
       opacity: [0, 1],
-      duration: 1000,
-      delay: this.delay,
+      duration: 1500,
+      delay: this.delay + 1000,
       easing: 'linear'
     });
 
     anime({
       targets: '.neuralthreads',
       translateX: [-100, 0],
+      opacity: [0,1],
       easing: 'spring(0,10,0.41,4)',
-      duration: 100,
-      delay: this.delay,
+      duration: 500,
+      delay: this.delay + 1000,
     });
 
     anime({
       targets: '.thought',
       translateY: [100, 0],
+      opacity: [0,1],
       easing: 'linear',
-      duration: 1000,
-      delay: this.delay,
+      duration: 1500,
+      delay: this.delay + 1000,
     });
 
     anime.timeline({ loop: true })
@@ -72,15 +76,15 @@ class AnimateHero {
     anime({
       targets: '.app__container-hero__button-up',
       opacity: [0, 1],
-      duration: 400,
-      delay: this.delay,
+      duration: 700,
+      delay: this.delay + 1000,
     });
 
     anime({
       targets: '.app__container-hero__button-down',
       opacity: [0, 1],
-      duration: 400,
-      delay: this.delay,
+      duration: 700,
+      delay: this.delay + 1000,
     });
     anime({
       targets: '.app__container-info__texts',
