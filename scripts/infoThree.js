@@ -13,7 +13,7 @@ class InfoThree {
       width: window.innerWidth,
       height: window.innerHeight
     }
-    this.sizing = this.sizes.width>=800 ? 0.07 : 0.085
+    this.sizing = this.sizes.width>=800 ? 0.07 : 0.12
     this.init();
   }
 

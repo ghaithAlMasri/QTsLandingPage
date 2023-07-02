@@ -1,10 +1,25 @@
 import anime from 'animejs/lib/anime.es.js';
 
 class AnimateHero {
-  constructor(delay = 5000) {
+  constructor(delay) {
     this.delay = delay;
     this.textWrapper = document.querySelector('.ml2');
     this.textWrapper.innerHTML = this.textWrapper.textContent.replace(/\S/g, "<span style='color: #fff;' class='letter'>$&</span>");
+    this.prevdel = null
+    this.intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.animate();
+          this.delay = 0
+
+        }
+      });
+    });
+
+
+    const targetElement = document.querySelector('.app__container-info__texts');
+    this.intersectionObserver.observe(targetElement);
+
 
     this.animate()
   }
@@ -56,22 +71,23 @@ class AnimateHero {
 
     anime({
       targets: '.app__container-hero__button-up',
-      translateX: [-1000, 0],
-      translateY: [-1000, 0],
-      translateZ: [-1000, 0],
-      duration: 1000,
-      delay: this.delay + 300,
-      rotate: '2turn'
+      opacity: [0, 1],
+      duration: 400,
+      delay: this.delay,
     });
 
     anime({
       targets: '.app__container-hero__button-down',
-      translateX: [1000, 0],
-      translateY: [1000, 0],
-      translateZ: [1000, 0],
-      duration: 1000,
-      delay: this.delay + 300,
-      rotate: '2turn'
+      opacity: [0, 1],
+      duration: 400,
+      delay: this.delay,
+    });
+    anime({
+      targets: '.app__container-info__texts',
+      scale: [0, 1],
+      opacity: [0, 0.25, 0.5, 1],
+      easing: 'easeInOutExpo',
+      duration: 2000,
     });
   }
 }

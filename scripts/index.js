@@ -5,7 +5,7 @@ import InfoThree from './infoThree'
 
 class MainClass {
   constructor() {
-    this.delay = 7000
+    this.delay = 15000
     this.threeInit = new ThreeInit(this.sizes);
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero(this.delay)
@@ -36,7 +36,6 @@ class MainClass {
     // HERO
     document.addEventListener('DOMContentLoaded', this.createTypeWriterEffect());
     // end of hero
-    // infos
   }
 
   handleMenuClick() {
@@ -88,6 +87,7 @@ class MainClass {
     const loadingScreen = document.querySelector('.loading-screen');
     loadingScreen.style.display = 'none';
     document.querySelector('.app__container').style.display = 'block'
+    this.delay = 0
     this.init()
   }
   timeout(ms) {
