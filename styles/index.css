@@ -687,6 +687,17 @@ span {
     }
 
 }
+@media screen and (max-width: 350px) {
+
+    .app__container-info{
+        align-items: flex-start;
+    }
+
+    .app__container-info__texts{
+        margin-top: 3rem;
+    }
+
+}
 
 @media screen and (min-width:1800px) {
     .app__container-info__texts p {
@@ -748,7 +759,8 @@ span {
 }
 @media screen and (max-width:350px) {
     .app__container-info__image img {
-        top: 12rem;
+        top: 15rem;
+        width: 70%;
         left: auto;
     }
 }
