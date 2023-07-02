@@ -34,7 +34,7 @@ class AnimateHero {
       translateZ: [100, 0],
       opacity: [0, 1],
       duration: 1500,
-      delay: this.delay + 1000,
+      delay: this.delay,
       easing: 'linear'
     });
 
@@ -44,7 +44,7 @@ class AnimateHero {
       opacity: [0,1],
       easing: 'spring(0,10,0.41,4)',
       duration: 500,
-      delay: this.delay + 1000,
+      delay: this.delay,
     });
 
     anime({
@@ -53,7 +53,7 @@ class AnimateHero {
       opacity: [0,1],
       easing: 'linear',
       duration: 1500,
-      delay: this.delay + 1000,
+      delay: this.delay,
     });
 
     anime.timeline({ loop: true })
@@ -77,14 +77,14 @@ class AnimateHero {
       targets: '.app__container-hero__button-up',
       opacity: [0, 1],
       duration: 700,
-      delay: this.delay + 1000,
+      delay: this.delay,
     });
 
     anime({
       targets: '.app__container-hero__button-down',
       opacity: [0, 1],
       duration: 700,
-      delay: this.delay + 1000,
+      delay: this.delay,
     });
     anime({
       targets: '.app__container-info__texts',
