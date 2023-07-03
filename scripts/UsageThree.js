@@ -128,11 +128,11 @@ class UsageThree {
                     child.userData.speedX *= -1;
                 }
     
-                if (child.position.y > canvasHeight / 100) {
-                    child.position.y = canvasHeight / 100;
+                if (child.position.y > canvasHeight / 125) {
+                    child.position.y = canvasHeight / 125;
                     child.userData.speedY *= -1;
-                } else if (child.position.y < -canvasHeight / 100) {
-                    child.position.y = -canvasHeight / 100;
+                } else if (child.position.y < -canvasHeight / 125) {
+                    child.position.y = -canvasHeight / 125;
                     child.userData.speedY *= -1;
                 }
             }

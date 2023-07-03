@@ -30,7 +30,6 @@ class InfoThree {
     this.generateRandomStars()
     this.addObject();
     this.setupCamera();
-    // this.addObjects()
     this.renderScene();
   }
 
@@ -57,23 +56,6 @@ class InfoThree {
 
 
 
-  addObjects() {
-    const textureLoader = new THREE.TextureLoader();
-    const spaceManTexture = textureLoader.load('/gen1.png');
-  
-    const spaceManGeometry = new THREE.PlaneGeometry(4, 4); // Adjust the size as needed
-    const spaceManMaterial = new THREE.MeshBasicMaterial({ map: spaceManTexture, transparent: true });
-  
-    const spaceMan = new THREE.Mesh(spaceManGeometry, spaceManMaterial);
-    spaceMan.position.set(0, 0, -10); // Adjust the position as needed
-    spaceMan.scale.set(2, 2, 2); // Adjust the position as needed
-    this.scene.add(spaceMan);
-  
-    // Create the red box helper
-    const boxHelper = new THREE.BoxHelper(spaceMan, 0xff0000);
-    this.scene.add(boxHelper);
-
-  }
 
   setupLights() {
     const ambientLight = new THREE.AmbientLight(0x808080, 0.6);
