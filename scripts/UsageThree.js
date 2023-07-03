@@ -17,7 +17,7 @@ class UsageThree {
         this.checker = new WebGlChecker();
         this.gens = { ...localImages };
         this.gensNames = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6'];
-        this.gensSizing = this.sizes.width > 1000 ? 0.1: this.sizes.width >500 ? 0.05 : 0.03
+        this.gensSizing = this.sizes.width > 1000 ? 0.1: this.sizes.width >500 ? 0.05 : 0.04
         this.xDivider = this.sizes.width > 1000 ? 130 : this.sizes.width >500 ? 150 : 125
         this.yDivider = this.sizes.width > 1000 ? 160 : this.sizes.width >500 ? 140 : 140
         if (this.checker.check()) this.init();

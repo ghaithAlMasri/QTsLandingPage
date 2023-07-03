@@ -54,9 +54,6 @@ class InfoThree {
     this.camera.position.set(0, 0, 1);
   }
 
-
-
-
   setupLights() {
     const ambientLight = new THREE.AmbientLight(0x808080, 0.6);
     this.scene.add(ambientLight);
@@ -79,7 +76,6 @@ class InfoThree {
 
     this.renderScene();
   }
-
 
   renderScene() {
     document.querySelector('.app__container-info__canvas').appendChild(this.renderer.domElement);
