@@ -91,6 +91,54 @@ class AnimateHero {
       easing: 'easeInOutExpo',
       duration: 2000,
     });
+    anime({
+      targets: '.first-usage-text',
+      scale: [0,1],
+      opacity: [0,1],
+      easing: 'easeInOutExpo',
+      duration: 1000
+    });
+    anime({
+      targets: '.first-usage-text-inner',
+      opacity: [0,1],
+      easing: 'easeInOutExpo',
+      duration: 500,
+      delay: 1000,
+    });
+    anime({
+      targets: '.second-usage-text',
+      scale: [0,1],
+      opacity: [0,1],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay:1000
+    });
+    anime({
+      targets: '.second-usage-text-inner',
+      opacity: [0,1],
+      easing: 'easeInOutExpo',
+      duration: 500,
+      delay: 2000,
+    });
+    anime({
+      targets: '.third-usage-text',
+      scale: [0,1],
+      opacity: [0,1],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay:2000
+    });
+    anime({
+      targets: '.third-usage-text-inner',
+      opacity: [0,1],
+      easing: 'easeInOutExpo',
+      duration: 500,
+      delay: 3000,
+    });
+
+
+
+
   }
 }
 
