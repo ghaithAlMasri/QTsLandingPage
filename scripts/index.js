@@ -2,14 +2,16 @@ import Hamburger from './hamburgerMenu';
 import ThreeInit from './threeInit';
 import AnimateHero from './animateHero'
 import InfoThree from './infoThree'
+import UsageThree from './UsageThree';
 
 class MainClass {
   constructor() {
-    this.delay = 13000
+    this.delay = 8000
     this.threeInit = new ThreeInit(this.sizes);
     this.hamburger = new Hamburger();
     this.animateHero = new AnimateHero(this.delay)
     this.InfoThree = new InfoThree()
+    this.usage = new UsageThree()
     this.hamburgerItems = document.getElementsByClassName('app__container-header-mobile__items');
     this.showLoadingScreen();
   }
@@ -36,6 +38,7 @@ class MainClass {
     // HERO
     document.addEventListener('DOMContentLoaded', this.createTypeWriterEffect());
     // end of hero
+
   }
 
   handleMenuClick() {
@@ -110,3 +113,4 @@ class MainClass {
 const init = new MainClass();
 
 export default MainClass;
+

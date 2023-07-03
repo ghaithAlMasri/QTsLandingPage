@@ -764,3 +764,22 @@ span {
         padding: 0;
     }
 }
+
+
+.app__container-usage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -99;
+}
+
+
+.app__container-usage__canvas{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+}

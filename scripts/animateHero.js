@@ -30,8 +30,7 @@ class AnimateHero {
   animate() {
     anime({
       targets: '.no-padding',
-      translateX: [100, 0],
-      translateZ: [100, 0],
+      opacity: [0, 1],
       opacity: [0, 1],
       duration: 1500,
       delay: this.delay,
@@ -49,7 +48,6 @@ class AnimateHero {
 
     anime({
       targets: '.thought',
-      translateY: [100, 0],
       opacity: [0,1],
       easing: 'linear',
       duration: 1500,

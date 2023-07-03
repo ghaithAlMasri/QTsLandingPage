@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
+import WebGlChecker from './WebglChecker'
 class InfoThree {
   constructor() {
     this.height = window.innerHeight;
@@ -14,6 +14,9 @@ class InfoThree {
       height: window.innerHeight
     }
     this.sizing = this.sizes.width>=800 ? 0.07 : 0.12
+    this.checker = new WebGlChecker()
+    
+    if(this.checker.check())
     this.init();
   }
 
@@ -27,6 +30,7 @@ class InfoThree {
     this.generateRandomStars()
     this.addObject();
     this.setupCamera();
+    // this.addObjects()
     this.renderScene();
   }
 
@@ -51,6 +55,26 @@ class InfoThree {
     this.camera.position.set(0, 0, 1);
   }
 
+
+
+  addObjects() {
+    const textureLoader = new THREE.TextureLoader();
+    const spaceManTexture = textureLoader.load('/gen1.png');
+  
+    const spaceManGeometry = new THREE.PlaneGeometry(4, 4); // Adjust the size as needed
+    const spaceManMaterial = new THREE.MeshBasicMaterial({ map: spaceManTexture, transparent: true });
+  
+    const spaceMan = new THREE.Mesh(spaceManGeometry, spaceManMaterial);
+    spaceMan.position.set(0, 0, -10); // Adjust the position as needed
+    spaceMan.scale.set(2, 2, 2); // Adjust the position as needed
+    this.scene.add(spaceMan);
+  
+    // Create the red box helper
+    const boxHelper = new THREE.BoxHelper(spaceMan, 0xff0000);
+    this.scene.add(boxHelper);
+
+  }
+
   setupLights() {
     const ambientLight = new THREE.AmbientLight(0x808080, 0.6);
     this.scene.add(ambientLight);
@@ -68,11 +92,12 @@ class InfoThree {
     requestAnimationFrame(this.animateMoon.bind(this));
 
     if (this.moon) {
-      this.moon.rotation.y += 0.001;
+      this.moon.rotation.y += 0.0004;
     }
 
     this.renderScene();
   }
+
 
   renderScene() {
     document.querySelector('.app__container-info__canvas').appendChild(this.renderer.domElement);
