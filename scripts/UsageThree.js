@@ -102,9 +102,8 @@ class UsageThree {
 
             const x = THREE.MathUtils.randFloatSpread(2);
             const y = THREE.MathUtils.randFloatSpread(2);
-            const z = THREE.MathUtils.randFloatSpread(2);
 
-            star.position.set(x, y, z);
+            star.position.set(x, y, 0.6);
             this.scene.add(star);
         }
     }
