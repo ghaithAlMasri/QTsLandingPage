@@ -59,7 +59,7 @@ class UsageThree {
             logo.magFilter = THREE.NearestFilter;
             logo.minFilter = THREE.LinearMipmapLinearFilter;
 
-            const logoGeometry = new THREE.PlaneGeometry(40, 40);
+            const logoGeometry = new THREE.PlaneGeometry(60, 60);
             const logoMaterial = new THREE.MeshBasicMaterial({ map: logo, transparent: false });
 
             const image = new THREE.Mesh(logoGeometry, logoMaterial);
