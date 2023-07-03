@@ -83,20 +83,18 @@ class InfoThree {
 
   renderScene() {
     document.querySelector('.app__container-info__canvas').appendChild(this.renderer.domElement);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(this.sizes.width, this.sizes.height);
     this.renderer.render(this.scene, this.camera);
   }
 
   generateRandomStars() {
     const numStars = 5000;
-    let lastStar = null
     const starGeometry = new THREE.SphereGeometry(0.0006);
     const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
   
     for (let i = 0; i < numStars; i++) {
       const star = new THREE.Mesh(starGeometry, starMaterial);
       star.name = 'star';
-      if (i === 69) { lastStar = star }
   
   
       const x = THREE.MathUtils.randFloatSpread(2);
