@@ -17,6 +17,9 @@ class UsageThree {
         this.checker = new WebGlChecker();
         this.gens = { ...localImages };
         this.gensNames = ['gen1', 'gen2', 'gen3', 'gen4', 'gen5', 'gen6'];
+        this.gensSizing = this.sizes.width > 1000 ? 0.1: this.sizes.width >500 ? 0.05 : 0.03
+        this.xDivider = this.sizes.width > 1000 ? 130 : this.sizes.width >500 ? 150 : 125
+        this.yDivider = this.sizes.width > 1000 ? 160 : this.sizes.width >500 ? 140 : 140
         if (this.checker.check()) this.init();
     }
 
@@ -65,10 +68,10 @@ class UsageThree {
             const randomX = THREE.MathUtils.randFloat(-8, 8);
             const randomY = THREE.MathUtils.randFloat(-3, 3);
 
-            const randomSpeed = THREE.MathUtils.randFloat(-0.02, 0.02)
+            const randomSpeed = THREE.MathUtils.randFloat(-0.025, 0.025)
 
             image.position.set(randomX, randomY, -10);
-            image.scale.set(0.1, 0.1, 0.1);
+            image.scale.set(this.gensSizing, this.gensSizing, this.gensSizing);
             image.userData.speedX = randomSpeed;
             image.userData.speedY = randomSpeed;
             this.scene.add(image);
@@ -119,19 +122,19 @@ class UsageThree {
                 child.position.y += child.userData.speedY;
                 child.rotation.z += (child.userData.speedX + child.userData.speedY) / 10;
     
-                if (child.position.x > canvasWidth / 100) {
-                    child.position.x = canvasWidth / 100;
+                if (child.position.x > canvasWidth / this.xDivider) {
+                    child.position.x = canvasWidth / this.xDivider;
                     child.userData.speedX *= -1;
-                } else if (child.position.x < -canvasWidth / 100) {
-                    child.position.x = -canvasWidth / 100;
+                } else if (child.position.x < -canvasWidth / this.xDivider) {
+                    child.position.x = -canvasWidth / this.xDivider;
                     child.userData.speedX *= -1;
                 }
     
-                if (child.position.y > canvasHeight / 125) {
-                    child.position.y = canvasHeight / 125;
+                if (child.position.y > canvasHeight / this.yDivider) {
+                    child.position.y = canvasHeight / this.yDivider;
                     child.userData.speedY *= -1;
-                } else if (child.position.y < -canvasHeight / 125) {
-                    child.position.y = -canvasHeight / 125;
+                } else if (child.position.y < -canvasHeight / this.yDivider) {
+                    child.position.y = -canvasHeight / this.yDivider;
                     child.userData.speedY *= -1;
                 }
             }

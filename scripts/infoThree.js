@@ -13,7 +13,7 @@ class InfoThree {
       width: window.innerWidth,
       height: window.innerHeight
     }
-    this.sizing = this.sizes.width>=800 ? 0.07 : 0.12
+    this.sizing =  0.04 
     this.checker = new WebGlChecker()
     
     if(this.checker.check())
@@ -41,7 +41,7 @@ class InfoThree {
     const self = this;
     this.loader.load('./the_moon.glb', function (model) {
       self.moon = model.scene;
-      self.moon.position.set(1, -0.2, 0);
+      self.moon.position.set(0.3, 0, 0.3);
       self.moon.scale.set(self.sizing, self.sizing, self.sizing);
 
       self.scene.add(self.moon);
