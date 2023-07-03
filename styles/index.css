@@ -687,14 +687,15 @@ span {
     }
 
 }
+
 @media screen and (max-width: 550px) {
 
-    .app__container-info{
+    .app__container-info {
         align-items: flex-start;
         justify-content: center;
     }
 
-    .app__container-info__texts{
+    .app__container-info__texts {
         margin-top: 3rem;
     }
 
@@ -760,7 +761,7 @@ span {
         left: 2rem;
     }
 
-    .app__container-info{
+    .app__container-info {
         padding: 0;
     }
 }
@@ -769,7 +770,7 @@ span {
 /* starting usage section css */
 
 
-.app__container-usage{
+.app__container-usage {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -782,7 +783,7 @@ span {
 }
 
 
-.app__container-usage__canvas{
+.app__container-usage__canvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -793,7 +794,7 @@ span {
 
 
 
-.app__container-usage__steps{
+.app__container-usage__steps {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -802,7 +803,7 @@ span {
 }
 
 
-.app__container-usage__steps > *{
+.app__container-usage__steps>* {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -813,7 +814,7 @@ span {
 }
 
 
-.app__container-usage__steps-texts{
+.app__container-usage__steps-texts {
     backdrop-filter: blur(50px);
     border-radius: 70px;
     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
@@ -822,21 +823,80 @@ span {
 
 
 @media screen and (max-width: 1000px) {
-    .app__container-usage__steps > *{
+    .app__container-usage__steps>* {
         padding: 2rem;
     }
-    .app__container-usage__steps-texts h1{
+
+    .app__container-usage__steps-texts h1 {
         font-size: 1.2rem;
     }
-    .app__container-usage__steps-texts h4{
+
+    .app__container-usage__steps-texts h4 {
         font-size: 0.8rem;
     }
-    
+
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1rem;
+    backdrop-filter: blur(50px);
+    background-color: #000;
+}
+
+footer p,
+footer a {
+    color: #fff;
 }
 
 
 
+.app__container-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.app__container-footer>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
 
 
+.info-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 
+.info-holder img {
+    width: 15%;
+    margin: 2rem;
+}
+
+
+.app__container-footer a {
+    transition: all 0.5s ease-in-out;
+}
+
+
+.footer-button {
+    border: 1px dotted #ff577f;
+    padding: 0.5rem;
+    transition: all 0.5s ease-in-out;
+}
+.footer-button:hover,.app__container-footer a:hover {
+    transform: scale(1.03);
+    opacity: 0.8;
+}
