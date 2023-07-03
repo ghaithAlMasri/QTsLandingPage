@@ -68,7 +68,7 @@ class UsageThree {
             const randomX = THREE.MathUtils.randFloat(-8, 8);
             const randomY = THREE.MathUtils.randFloat(-3, 3);
 
-            const randomSpeed = THREE.MathUtils.randFloat(-0.025, 0.025)
+            const randomSpeed = THREE.MathUtils.randFloat(-0.02, 0.02)
 
             image.position.set(randomX, randomY, -10);
             image.scale.set(this.gensSizing, this.gensSizing, this.gensSizing);
