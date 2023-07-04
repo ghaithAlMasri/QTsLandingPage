@@ -89,6 +89,7 @@ span {
     top: 0;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -245,6 +246,7 @@ span {
         transform: translateX(20%);
         background-color: #e3e3e3;
         backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         opacity: 1;
     }
 }
@@ -254,6 +256,7 @@ span {
         transform: translateX(20%);
         background-color: #e3e3e3;
         backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
         opacity: 1;
     }
 
@@ -624,6 +627,8 @@ span {
     text-align: start;
     position: relative;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
 }
 
 
@@ -816,24 +821,31 @@ span {
 
 .app__container-usage__steps-texts {
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     border-radius: 70px;
     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
     width: 30%;
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
     .app__container-usage__steps>* {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .app__container-usage__steps-texts h1 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .app__container-usage__steps-texts h4 {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
+
+    .app__container-usage__steps-texts{
+        border-radius: 9px;
+    }
+
+
 
 }
 
@@ -845,6 +857,7 @@ footer {
     flex-direction: column;
     padding: 0 1rem;
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     background-color: #000;
 }
 
@@ -881,7 +894,7 @@ footer a {
 
 
 .info-holder img {
-    width: 15%;
+    width: 15rem;
     margin: 2rem;
 }
 
@@ -900,3 +913,7 @@ footer a {
     transform: scale(1.03);
     opacity: 0.8;
 }
+
+/* @media screen and wid {
+    
+} */
