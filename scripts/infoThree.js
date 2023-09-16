@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import WebGlChecker from './WebglChecker'
+
+// Initiateing info section's three js
 class InfoThree {
   constructor() {
     this.height = window.innerHeight;

@@ -2,6 +2,8 @@ import WebGlRendererChecker from './WebglChecker';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+
+// initiate hero section's three js
 class ThreeInit {
   constructor() {
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
